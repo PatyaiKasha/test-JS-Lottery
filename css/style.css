@@ -1,0 +1,31 @@
+* {
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 80%;
+    min-width: 900px;
+    margin: 0 auto;
+}
+
+.reg-form {
+    width: 300px;
+    margin: 0 auto;
+}
+
+li {
+    list-style: none;
+    margin: 8px 16px;
+    /* background: green; */
+}
+
+li>span {
+    list-style: none;
+    padding: 8px 16px;
+}
+
+.winner {
+    background: green;
+}
