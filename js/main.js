@@ -46,8 +46,9 @@ function addParticipant(name, sureName, mail, phone, bday, listCount) {
     partBday.className = 'partBday';
     partBday.innerText = bday.value;
 
-    let partList = document.createElement('li');
 
+
+    let partList = document.createElement('li');
     partList.className = 'partList';
 
     partList.appendChild(liNum);
@@ -56,7 +57,7 @@ function addParticipant(name, sureName, mail, phone, bday, listCount) {
     partList.appendChild(partMail);
     partList.appendChild(partPhone);
     partList.appendChild(partBday);
-    document.body.appendChild(partList);
+    list.appendChild(partList);
 }
 
 //Очищаем форму добавления участников
