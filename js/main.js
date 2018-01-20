@@ -71,10 +71,14 @@ function winnerCheck() {
     let winList = document.querySelectorAll('tr');
     let rndm = Math.floor(Math.random() * (winList.length));
 
-    for (let i = 0; i < winList.length; i++) {
-        winList[i].style.background = 'none';
+    if (!winList.length) {
+        alert('Вы не ввели участников лотереи');
+    } else {
+        for (let i = 0; i < winList.length; i++) {
+            winList[i].style.background = 'none';
+        }
+        winList[rndm].style.background = 'green';
     }
-    winList[rndm].style.background = 'green';
 }
 
 //Редактируем данные участника лотереи
