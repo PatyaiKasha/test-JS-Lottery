@@ -10,7 +10,7 @@ function formCheck() {
 
     if (name.value && sureName.value && mail.value && mail.value) {
         addParticipant(name, sureName, mail, phone, bday);
-        // clearPart();
+        clearPart();
     } else {
         alert('Заполните обязательные поля');
     }
@@ -53,7 +53,6 @@ function addParticipant(name, sureName, mail, phone, bday) {
     let table = document.querySelector('.table');
 
     table.appendChild(trList);
-
 }
 
 //Очищаем форму добавления участников
