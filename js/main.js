@@ -13,7 +13,7 @@ function formCheck() {
     if (name.value && sureName.value && mail.value && mail.value) {
         listCount++;
         addParticipant(name, sureName, mail, phone, bday, listCount);
-        // clearPart();
+        clearPart();
     } else {
         alert('Заполните обязательные поля');
     }
