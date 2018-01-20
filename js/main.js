@@ -1,7 +1,7 @@
 //Проверка формы
 document.querySelector('.btn-add').onclick = formCheck;
 
-let listCount = 0;
+// let listCount = 0;
 
 function formCheck() {
     let name = document.querySelector('.name');
@@ -11,53 +11,59 @@ function formCheck() {
     let bday = document.querySelector('.bday');
 
     if (name.value && sureName.value && mail.value && mail.value) {
-        listCount++;
-        addParticipant(name, sureName, mail, phone, bday, listCount);
-        clearPart();
+        // listCount++;
+        addParticipant(name, sureName, mail, phone, bday);
+        // clearPart();
     } else {
         alert('Заполните обязательные поля');
     }
 }
 
 //Добавляем участника лотереи в таблицу
-function addParticipant(name, sureName, mail, phone, bday, listCount) {
+function addParticipant(name, sureName, mail, phone, bday) {
 
-    let liNum = document.createElement('span');
-    liNum.className = 'liNum';
-    liNum.innerText = listCount;
+    // let liNum = document.createElement('span');
+    // liNum.className = 'liNum';
+    // liNum.innerText = listCount;
 
-    let partName = document.createElement('span');
-    partName.className = 'partName';
+    let partName = document.createElement('td');
+    partName.className = 'td-name';
     partName.innerText = name.value;
 
-    let partSureName = document.createElement('span');
-    partSureName.className = 'partSureName';
+    let partSureName = document.createElement('td');
+    partSureName.className = 'td-surename';
     partSureName.innerText = sureName.value;
 
-    let partMail = document.createElement('span');
-    partMail.className = 'partMail';
+    let partMail = document.createElement('td');
+    partMail.className = 'td-mail';
     partMail.innerText = mail.value;
 
-    let partPhone = document.createElement('span');
-    partPhone.className = 'partPhone';
+    let partPhone = document.createElement('td');
+    partPhone.className = 'td-phone';
     partPhone.innerText = phone.value;
 
-    let partBday = document.createElement('span');
-    partBday.className = 'partBday';
+    let partBday = document.createElement('td');
+    partBday.className = 'td-bday';
     partBday.innerText = bday.value;
 
+    let trList = document.createElement('tr');
+    trList.className = 'trList';
 
 
-    let partList = document.createElement('li');
-    partList.className = 'partList';
 
-    partList.appendChild(liNum);
-    partList.appendChild(partName);
-    partList.appendChild(partSureName);
-    partList.appendChild(partMail);
-    partList.appendChild(partPhone);
-    partList.appendChild(partBday);
-    list.appendChild(partList);
+    // let tdList = document.createElement('td');
+    // tdist.className = 'tdList';
+
+    // let partList = document.createElement('tr');
+    // partList.className = 'partList';
+
+    // partList.appendChild(liNum);
+    // partList.appendChild(partName);
+    // partList.appendChild(partSureName);
+    // partList.appendChild(partMail);
+    // partList.appendChild(partPhone);
+    // partList.appendChild(partBday);
+    // list.appendChild(partList);
 }
 
 //Очищаем форму добавления участников

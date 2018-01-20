@@ -45,3 +45,12 @@ li>span {
     cursor: pointer;
     border-bottom: 1px dotted #666;
 }
+
+.partName,
+.partSureName,
+.partMail,
+.partPhone,
+.partBday {
+    display: inline-block;
+    width: 15%;
+}
