@@ -10,22 +10,38 @@
     margin: 0 auto;
 }
 
-.reg-form {
+.add-form {
     width: 300px;
     margin: 0 auto;
+}
+
+p {
+    margin: 8px 0;
 }
 
 li {
     list-style: none;
     margin: 8px 16px;
-    /* background: green; */
 }
 
 li>span {
     list-style: none;
-    padding: 8px 16px;
+    padding: 8px 8px 2px 8px;
 }
 
 .winner {
     background: green;
+}
+
+.btn {
+    margin: 8px 8px 8px 0;
+}
+
+.partList span:hover {
+    border-bottom: 2px dotted transparent;
+}
+
+.partList>span:hover {
+    cursor: pointer;
+    border-bottom: 1px dotted #666;
 }
