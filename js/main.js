@@ -1,8 +1,6 @@
 //Проверка формы
 document.querySelector('.btn-add').onclick = formCheck;
 
-// let listCount = 0;
-
 function formCheck() {
     let name = document.querySelector('.name');
     let sureName = document.querySelector('.sure-name');
@@ -11,7 +9,6 @@ function formCheck() {
     let bday = document.querySelector('.bday');
 
     if (name.value && sureName.value && mail.value && mail.value) {
-        // listCount++;
         addParticipant(name, sureName, mail, phone, bday);
         // clearPart();
     } else {
@@ -22,9 +19,7 @@ function formCheck() {
 //Добавляем участника лотереи в таблицу
 function addParticipant(name, sureName, mail, phone, bday) {
 
-    // let liNum = document.createElement('span');
-    // liNum.className = 'liNum';
-    // liNum.innerText = listCount;
+    let wrapper = document.querySelector('.wrapper');
 
     let partName = document.createElement('td');
     partName.className = 'td-name';
@@ -47,23 +42,18 @@ function addParticipant(name, sureName, mail, phone, bday) {
     partBday.innerText = bday.value;
 
     let trList = document.createElement('tr');
-    trList.className = 'trList';
+    trList.className = 'tr-list';
 
+    trList.appendChild(partName);
+    trList.appendChild(partSureName);
+    trList.appendChild(partMail);
+    trList.appendChild(partPhone);
+    trList.appendChild(partBday);
 
+    let table = document.querySelector('.table');
 
-    // let tdList = document.createElement('td');
-    // tdist.className = 'tdList';
+    table.appendChild(trList);
 
-    // let partList = document.createElement('tr');
-    // partList.className = 'partList';
-
-    // partList.appendChild(liNum);
-    // partList.appendChild(partName);
-    // partList.appendChild(partSureName);
-    // partList.appendChild(partMail);
-    // partList.appendChild(partPhone);
-    // partList.appendChild(partBday);
-    // list.appendChild(partList);
 }
 
 //Очищаем форму добавления участников
@@ -78,11 +68,8 @@ function clearPart() {
 document.querySelector('.btn-win').onclick = winnerCheck;
 
 function winnerCheck() {
-    let winner = document.createElement('span');
-    winner.className = 'winner';
-    winner.innerText = 'WINNER !!!';
 
-    let winList = document.querySelectorAll('li');
+    let winList = document.querySelectorAll('tr');
     let rndm = Math.floor(Math.random() * (winList.length));
 
     for (let i = 0; i < winList.length; i++) {
@@ -93,7 +80,7 @@ function winnerCheck() {
 
 //Редактируем данные участника лотереи
 document.onclick = function(event) {
-    if (event.target.parentNode.className == 'partList') {
+    if (event.target.parentNode.className == 'tr-list') {
         editPartList(event.target);
     }
 };
